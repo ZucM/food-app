@@ -399,13 +399,18 @@
                 <form method="POST" action="mailer.php" class="contact-form">
 
                     <div class="row">
-                        <div class="form-message success">
-                            Thank You! Your message has been sent.
-                        </div>
 
-                        <!-- <div class="form-message error">
-                        Oops! Something went wrong. Please try again!
-                        </div> -->
+                        <?php
+                        
+                        if($_GET['success'] == 1) {
+                            echo "<div class=\"form-message success\">Thank You! Your message has been sent.</div>";
+                        }
+                        
+                        if($_GET['success'] == -1) {
+                            echo "<div class=\"form-message error\">Oops! Something went wrong. Please try again!</div>";
+                        }              
+                        
+                        ?>
                     </div>
 
                     <div class="row">
